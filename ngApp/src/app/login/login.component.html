@@ -14,6 +14,7 @@
               <label for="uname1">Username</label>
               <input
                 type="text"
+                [(ngModel)]="loginUserData.email"
                 class="form-control rounded-0"
                 name="email"
                 required
@@ -23,6 +24,7 @@
               <label>Password</label>
               <input
                 type="password"
+                [(ngModel)]="loginUserData.password"
                 class="form-control rounded-0"
                 name="password"
                 required
