@@ -56,13 +56,13 @@ router.get("/events", (req, res) => {
       _id: "1",
       name: "Uddika Putha",
       description: "Sudu araliya mala",
-      data: "2021-2-3",
+      date: "2021-2-3",
     },
     {
       _id: "3",
       name: "Uddika Putha",
       description: "Sudu araliya mala",
-      data: "2025-8-5",
+      date: "2025-8-5",
     },
   ];
   res.json(events);
@@ -74,13 +74,13 @@ router.get("/special", (req, res) => {
       _id: "1",
       name: "Uddika Putha",
       description: "Sudu araliya mala",
-      data: "2021-2-3",
+      date: "2021-2-3",
     },
     {
       _id: "3",
       name: "Uddika Putha",
       description: "Sudu araliya mala",
-      data: "2025-8-5",
+      date: "2025-8-5",
     },
   ];
   res.json(events);
