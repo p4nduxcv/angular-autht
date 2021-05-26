@@ -16,6 +16,26 @@ mongoose.connect(db, (err) => {
   }
 });
 
+function verifyToken(req, res, next) {
+  if (!req.headers.authorization) {
+    return res.status(401).send("unauthorized Request");
+  }
+
+  let token = req.headers.authorization.split(" ")[1];
+
+  if (token === "nul") {
+    return res.status(401).send("unauthorized Null Request");
+  }
+
+  let payload = jwt.verify(token, "gammacthama");
+  if (!payload) {
+    return res.status(401).send("unauthorized payload Request");
+  }
+
+  req.userId = payload.subject;
+  next();
+}
+
 router.get("/", (req, res) => {
   res.send("From API Service");
   console.log("git");
@@ -73,7 +93,7 @@ router.get("/events", (req, res) => {
   res.json(events);
 });
 
-router.get("/special", (req, res) => {
+router.get("/special", verifyToken, (req, res) => {
   let events = [
     {
       _id: "1",
