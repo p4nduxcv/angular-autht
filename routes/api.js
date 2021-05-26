@@ -50,4 +50,40 @@ router.post("/login", (req, res) => {
   });
 });
 
+router.get("/events", (req, res) => {
+  let events = [
+    {
+      _id: "1",
+      name: "Uddika Putha",
+      description: "Sudu araliya mala",
+      data: "2021-2-3",
+    },
+    {
+      _id: "3",
+      name: "Uddika Putha",
+      description: "Sudu araliya mala",
+      data: "2025-8-5",
+    },
+  ];
+  res.json(events);
+});
+
+router.get("/special", (req, res) => {
+  let events = [
+    {
+      _id: "1",
+      name: "Uddika Putha",
+      description: "Sudu araliya mala",
+      data: "2021-2-3",
+    },
+    {
+      _id: "3",
+      name: "Uddika Putha",
+      description: "Sudu araliya mala",
+      data: "2025-8-5",
+    },
+  ];
+  res.json(events);
+});
+
 module.exports = router;
